@@ -1,0 +1,17 @@
+subject = "[Genius] Contato recebido através do site!"
+layout = "--"
+
+==
+
+<p>
+    <img style="max-width: 250px; max-height: 100px;" src="{{ message.embed( 'storage/app/media/logo.png' ) }}"><br><br>
+</p>
+<p>
+    <b>Contato recebido através do site!</b>
+</p>
+<p>
+    <b>Nome:</b> {{ name }} <br>
+    <b>E-mail:</b> {{ email }} <br>
+    <b>Telefone:</b> {{ phone }} <br><br>
+    {{ text|nl2br }}
+</p>

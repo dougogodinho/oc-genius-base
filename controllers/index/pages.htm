@@ -1,0 +1,25 @@
+<?php Block::put('breadcrumb') ?>
+<ul>
+    <li><?= e(trans($this->pageTitle)) ?></li>
+</ul>
+<?php Block::endPut() ?>
+
+
+<h1><?= e(trans($this->pageTitle)) ?></h1>
+<br>
+<p>Nesta seção você poderá gerenciar as páginas chamadas "estáticas", isto é, as páginas do seu site que não mudam com muita frequência. Exemplo: "Quem Somos", textos da seção "Contato", etc.</p>
+
+<div id="conteiner-nav-clone"></div>
+
+<script>
+    $(function(){
+        $('#layout-sidenav .nav').clone().appendTo('#conteiner-nav-clone');
+    })
+</script>
+<style>
+    #conteiner-nav-clone i{
+        font-size: 30px;
+        margin-right: 10px;
+        vertical-align: sub;
+    }
+</style>

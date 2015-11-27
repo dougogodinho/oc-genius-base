@@ -1,0 +1,20 @@
+subject = "[Genius] Cadastro recebido através do site!"
+layout = "--"
+
+==
+
+<p>
+    <img style="max-width: 250px; max-height: 100px;" src="{{ message.embed( 'storage/app/media/logo.png' ) }}"><br><br>
+</p>
+<p>
+    <b>Cadastro recebido através do site!</b>
+</p>
+<p>
+    <b>Empresa:</b> {{ name }} <br>
+    <b>Ramo / Atividade:</b> {{ activity }} <br>
+    <b>CNPJ:</b> {{ cnpj }} <br>
+    <b>Telefone:</b> {{ phone }} <br>
+    <b>E-mail:</b> {{ email }} <br>
+    <b>Site:</b> {{ site }} <br><br>
+    {{ address|nl2br }}
+</p>
