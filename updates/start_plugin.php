@@ -1,8 +1,9 @@
 <?php namespace Genius\Base\Updates;
 
+use Artisan;
 use Backend\Models\BrandSettings;
 use Backend\Models\User;
-use Schema;
+use Cms\Classes\Theme;
 use October\Rain\Database\Updates\Migration;
 use System\Models\File;
 use System\Models\MailSettings;
@@ -13,6 +14,22 @@ class StartPlugin extends Migration
 
     public function up()
     {
+        $base_path = base_path('');
+
+        // THEME
+        system("cd $base_path && git clone https://github.com/estudiogenius/oc-genius-theme themes/genius");
+        Theme::setActiveTheme('genius');
+
+        // ELIXIR
+        system("cd $base_path && git clone https://github.com/estudiogenius/oc-genius-elixir plugins/genius/elixir");
+
+        // FORMS
+        system("cd $base_path && git clone https://github.com/estudiogenius/oc-genius-forms plugins/genius/forms");
+
+        // BACKUP
+        system("cd $base_path && git clone https://github.com/estudiogenius/oc-genius-backup plugins/genius/backup");
+
+
         // GOOGLE ANALYTICS
         AnalytcsSettings::create([
             'project_name' => 'API Project',
@@ -54,6 +71,9 @@ class StartPlugin extends Migration
         $user->avatar()->add(File::create([
             'data' => plugins_path('genius/base/assets/genius-avatar.jpg'),
         ]));
+
+        // FINALIZA E INSTALA DEPENDÊNCIAS
+        Artisan::call('october:up');
     }
 
     public function down()

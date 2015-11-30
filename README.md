@@ -1,6 +1,35 @@
-Genius Base
------------
+# Genius Elixir
 
-Recursos:
+- [Description](#description)
+- [Instalations](#installation)
+- [Usage](#usage)
+- [To do](#todo)
 
- - Language code in tweg: `{{ lang() }}`
+<a name="description"></a>
+## Description
+
+Description here
+
+
+<a name="instalation"></a>
+## Instalation
+
+After start a clear project and setup the database, run:
+
+    git clone https://github.com/estudiogenius/oc-genius-base plugins/genius/base
+
+
+<a name="usage"></a>
+## Usage
+
+Usage here
+
+
+<a name="todo"></a>
+## To do
+
+- Inprove documentation
+- Translate
+
+
+

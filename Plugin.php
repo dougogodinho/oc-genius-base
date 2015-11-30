@@ -10,11 +10,12 @@ class Plugin extends PluginBase
 {
 
     public $require = [
-        // 'RainLab.Translate',
-        // 'Flynsarmy.IdeHelper',
-        // 'BnB.ScaffoldTranslation',
+        'RainLab.Translate',
+        'Flynsarmy.IdeHelper',
+        'BnB.ScaffoldTranslation',
         'October.Drivers',
         'RainLab.GoogleAnalytics',
+        'Genius.StorageClear',
     ];
 
     /**
