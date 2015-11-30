@@ -17,6 +17,7 @@ Description here
 After start a clear project and setup the database, run:
 
     git clone https://github.com/estudiogenius/oc-genius-base plugins/genius/base
+    php artisan october:up
 
 
 <a name="usage"></a>
