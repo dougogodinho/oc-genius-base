@@ -16,6 +16,19 @@ class StartPlugin extends Migration
     {
         $base_path = base_path('');
 
+        // DEPENDENCIES
+        foreach ([
+                     'RainLab.Translate',
+                     'Flynsarmy.IdeHelper',
+                     'BnB.ScaffoldTranslation',
+                     'October.Drivers',
+                     'RainLab.GoogleAnalytics',
+                     'Genius.StorageClear',
+                 ] as $required) {
+
+            Artisan::call("plugin:install",['name'=>$required]);
+        }
+
         // THEME
         system("cd $base_path && git clone https://github.com/estudiogenius/oc-genius-theme themes/genius");
         Theme::setActiveTheme('genius');
@@ -74,6 +87,7 @@ class StartPlugin extends Migration
 
         // FINALIZA E INSTALA DEPENDÊNCIAS
         Artisan::call('october:up');
+        Artisan::call('elixir:init');
     }
 
     public function down()
