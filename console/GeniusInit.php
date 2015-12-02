@@ -71,7 +71,7 @@ class GeniusInit extends Command
 
         // GOOGLE ANALYTICS
         $this->info('Initial setup: AnalytcsSettings');
-        if (AnalytcsSettings::get('project_name')) {
+        if (!AnalytcsSettings::get('project_name')) {
             AnalytcsSettings::create([
                 'project_name' => 'API Project',
                 'client_id' => '979078159189-8afk8nn2las4vk1krbv8t946qfk540up.apps.googleusercontent.com',
@@ -86,7 +86,7 @@ class GeniusInit extends Command
 
         // EMAIL
         $this->info('Initial setup: MailSettings');
-        if (MailSettings::get('sender_name')) {
+        if (!MailSettings::get('mandrill_secret')) {
             MailSettings::create([
                 'send_mode' => 'mandrill',
                 'sender_name' => 'Genius Soluções Web',
@@ -97,10 +97,11 @@ class GeniusInit extends Command
 
         // BRAND
         $this->info('Initial setup: BrandSettings');
-        if (BrandSettings::get('app_name')) {
+        if (!BrandSettings::get('app_init')) {
             BrandSettings::create([
                 'app_name' => 'Genius Soluções Web',
                 'app_tagline' => 'powered by Genius',
+                'app_init' => true,
             ])->logo()->add(File::create([
                 'data' => plugins_path('genius/base/assets/genius-logo.png'),
             ]));

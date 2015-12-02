@@ -28,6 +28,7 @@ Usage here
 <a name="todo"></a>
 ## To do
 
+- Translate Controllers/Partials
 - Improve documentation
 
 
