@@ -1,4 +1,4 @@
-# Genius Elixir
+# Genius Base Plugin
 
 - [Description](#description)
 - [Instalations](#installation)
@@ -8,8 +8,7 @@
 <a name="description"></a>
 ## Description
 
-Description here
-
+This plugin provides the basis for Genius projects, makes the installation of dependencies cool and also has an automator the initial setup (User, Analytics, Brand, etc).
 
 <a name="instalation"></a>
 ## Instalation
@@ -17,7 +16,7 @@ Description here
 After start a clear project and setup the database, run:
 
     git clone https://github.com/estudiogenius/oc-genius-base plugins/genius/base
-    php artisan october:up
+    php artisan plugin:refresh Genius.Base
 
 
 <a name="usage"></a>
@@ -29,8 +28,7 @@ Usage here
 <a name="todo"></a>
 ## To do
 
-- Inprove documentation
-- Translate
-
+- Convert to command instead migration
+- Improve documentation
 
 
