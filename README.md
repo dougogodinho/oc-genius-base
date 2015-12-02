@@ -16,7 +16,7 @@ This plugin provides the basis for Genius projects, makes the installation of de
 After start a clear project and setup the database, run:
 
     git clone https://github.com/estudiogenius/oc-genius-base plugins/genius/base
-    php artisan plugin:refresh Genius.Base
+    php artisan genius:init
 
 
 <a name="usage"></a>
@@ -28,7 +28,6 @@ Usage here
 <a name="todo"></a>
 ## To do
 
-- Convert to command instead migration
 - Improve documentation
 
 

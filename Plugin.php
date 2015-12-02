@@ -93,4 +93,9 @@ class Plugin extends PluginBase
 //        });
     }
 
+    public function register()
+    {
+        $this->registerConsoleCommand('genius.base.init', 'Genius\Base\Console\GeniusInit');
+    }
+
 }
