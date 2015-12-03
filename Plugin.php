@@ -1,6 +1,7 @@
 <?php namespace Genius\Base;
 
 use Backend\Facades\Backend;
+use Cms\Classes\Theme;
 use System\Classes\PluginBase;
 
 /**
@@ -36,8 +37,20 @@ class Plugin extends PluginBase
     public function registerMarkupTags()
     {
         return [
+            'filters' => [
+                'hash' => function($url){
+                    $file = Theme::getActiveTheme()->getPath() . '/' . $url;
+                    if (is_file($file)){
+                        return $url . '?' . filemtime(Theme::getActiveTheme()->getPath() . '/' . $url);
+                    } else {
+                        return $url;
+                    }
+                }
+            ],
             'functions' => [
-                'lang' => function() { return \RainLab\Translate\Classes\Translator::instance()->getLocale(); },
+                'lang' => function() {
+                    return \RainLab\Translate\Classes\Translator::instance()->getLocale();
+                },
             ]
         ];
     }
