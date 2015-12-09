@@ -101,6 +101,11 @@ class GeniusInit extends Command
             BrandSettings::create([
                 'app_name' => 'Genius Soluções Web',
                 'app_tagline' => 'powered by Genius',
+                "primary_color_light" => "#e67e22",
+                "primary_color_dark" => "#d35400",
+                "secondary_color_light" => "#34495e",
+                "secondary_color_dark" => "#2b3e50",
+                "custom_css" => "",
                 'app_init' => true,
             ])->logo()->add(File::create([
                 'data' => plugins_path('genius/base/assets/genius-logo.png'),
